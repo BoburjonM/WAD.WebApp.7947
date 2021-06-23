@@ -38,7 +38,7 @@
             @Html.DisplayNameFor(model => model.PizzaBinPhoto)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.PizzaBinPhoto)
+            <img src="@Url.Action("ShowImage", new {id= Model.PizzaId})" width="200" />
         </dd>
     </dl>
 </div>

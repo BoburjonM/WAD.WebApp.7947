@@ -40,13 +40,13 @@
                 @Html.DisplayFor(modelItem => item.Price)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Category.CategoryId)
+                @Html.DisplayFor(modelItem => item.Category.CategoryName)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Size)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.PizzaBinPhoto)
+                <img src="@Url.Action("ShowImage", new {id= item.PizzaId})" width="80" />
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.PizzaId">Edit</a> |

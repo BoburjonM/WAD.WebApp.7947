@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -48,7 +49,8 @@ namespace WAD.WebApp._7947.Controllers
         // GET: Pizzas/Create
         public IActionResult Create()
         {
-            ViewData["CategoryId"] = new SelectList(_context.Category, "CategoryId", "CategoryId");
+            ViewData["Size"] = new SelectList(Enum.GetValues(typeof(PizzaSize)).Cast<PizzaSize>().ToList());
+            ViewData["CategoryId"] = new SelectList(_context.Category, "CategoryId", "CategoryName");
             return View();
         }
 
@@ -57,15 +59,26 @@ namespace WAD.WebApp._7947.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("PizzaId,PizzaName,Price,CategoryId,Size,PizzaBinPhoto")] Pizza pizza)
+        public async Task<IActionResult> Create([Bind("PizzaId,PizzaName,Price,CategoryId,Size,PizzaPhoto")] Pizza pizza)
         {
             if (ModelState.IsValid)
             {
+                byte[] photoBytes = null;
+                if (pizza.PizzaPhoto != null)
+                {
+                    using (var memory = new MemoryStream())
+                    {
+                        pizza.PizzaPhoto.CopyTo(memory);
+                        photoBytes = memory.ToArray();
+                    }
+                }
+                pizza.PizzaBinPhoto = photoBytes;
                 _context.Add(pizza);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["CategoryId"] = new SelectList(_context.Category, "CategoryId", "CategoryId", pizza.CategoryId);
+            ViewData["Size"] = new SelectList(Enum.GetValues(typeof(PizzaSize)).Cast<PizzaSize>().ToList());
+            ViewData["CategoryId"] = new SelectList(_context.Category, "CategoryId", "CategoryName", pizza.CategoryId);
             return View(pizza);
         }
 
@@ -82,7 +95,8 @@ namespace WAD.WebApp._7947.Controllers
             {
                 return NotFound();
             }
-            ViewData["CategoryId"] = new SelectList(_context.Category, "CategoryId", "CategoryId", pizza.CategoryId);
+            ViewData["Size"] = new SelectList(Enum.GetValues(typeof(PizzaSize)).Cast<PizzaSize>().ToList());
+            ViewData["CategoryId"] = new SelectList(_context.Category, "CategoryId", "CategoryName", pizza.CategoryId);
             return View(pizza);
         }
 
@@ -102,6 +116,20 @@ namespace WAD.WebApp._7947.Controllers
             {
                 try
                 {
+                    byte[] photoBytes = null;
+                    if (pizza.PizzaPhoto != null)
+                    {
+                        using (var memory = new MemoryStream())
+                        {
+                            pizza.PizzaPhoto.CopyTo(memory);
+                            photoBytes = memory.ToArray();
+                        }
+                    }
+                    else
+                    {
+                        photoBytes = pizza.PizzaBinPhoto;
+                    }
+                    pizza.PizzaBinPhoto = photoBytes;
                     _context.Update(pizza);
                     await _context.SaveChangesAsync();
                 }
@@ -118,7 +146,8 @@ namespace WAD.WebApp._7947.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["CategoryId"] = new SelectList(_context.Category, "CategoryId", "CategoryId", pizza.CategoryId);
+            ViewData["Size"] = new SelectList(Enum.GetValues(typeof(PizzaSize)).Cast<PizzaSize>().ToList());
+            ViewData["CategoryId"] = new SelectList(_context.Category, "CategoryId", "CategoryName", pizza.CategoryId);
             return View(pizza);
         }
 
@@ -155,6 +184,22 @@ namespace WAD.WebApp._7947.Controllers
         private bool PizzaExists(int id)
         {
             return _context.Pizza.Any(e => e.PizzaId == id);
+        }
+        public async Task<IActionResult> ShowImage(int? id)
+        {
+            if (id.HasValue)
+            {
+                var pizza = await _context.Pizza.FindAsync(id);
+                if (pizza?.PizzaBinPhoto != null)
+                {
+                    return File(
+                        pizza.PizzaBinPhoto,
+                        "image/jpeg",
+                        $"pizza_{id}.jpg");
+                }
+            }
+
+            return NotFound();
         }
     }
 }

@@ -40,3 +40,8 @@ d:\9sem\wad\WAD.WebApp.7947\WAD.WebApp.7947\obj\Debug\netcoreapp2.1\Razor\Views\
 d:\9sem\wad\WAD.WebApp.7947\WAD.WebApp.7947\obj\Debug\netcoreapp2.1\Razor\Views\Categories\Details.cshtml.g.cs
 d:\9sem\wad\WAD.WebApp.7947\WAD.WebApp.7947\obj\Debug\netcoreapp2.1\Razor\Views\Categories\Edit.cshtml.g.cs
 d:\9sem\wad\WAD.WebApp.7947\WAD.WebApp.7947\obj\Debug\netcoreapp2.1\Razor\Views\Categories\Index.cshtml.g.cs
+d:\9sem\wad\WAD.WebApp.7947\WAD.WebApp.7947\obj\Debug\netcoreapp2.1\Razor\Views\Pizzas\Create.cshtml.g.cs
+d:\9sem\wad\WAD.WebApp.7947\WAD.WebApp.7947\obj\Debug\netcoreapp2.1\Razor\Views\Pizzas\Delete.cshtml.g.cs
+d:\9sem\wad\WAD.WebApp.7947\WAD.WebApp.7947\obj\Debug\netcoreapp2.1\Razor\Views\Pizzas\Details.cshtml.g.cs
+d:\9sem\wad\WAD.WebApp.7947\WAD.WebApp.7947\obj\Debug\netcoreapp2.1\Razor\Views\Pizzas\Edit.cshtml.g.cs
+d:\9sem\wad\WAD.WebApp.7947\WAD.WebApp.7947\obj\Debug\netcoreapp2.1\Razor\Views\Pizzas\Index.cshtml.g.cs
