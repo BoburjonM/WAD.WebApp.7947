@@ -2,12 +2,16 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using WAD.WebApp._7947.DAL;
+using WAD.WebApp._7947.DAL.DTO;
+using WAD.WebApp._7947.DAL.Repositories;
 
 namespace WAD.WebApp._7947
 {
@@ -29,9 +33,17 @@ namespace WAD.WebApp._7947
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
-
+            services.AddSingleton(Configuration);
+            services.AddScoped<IBaseRepository<Category>, CategoryRepository>();
+            services.AddScoped<IBaseRepository<Pizza>, PizzaRepository>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            services.AddDbContext<PizzaStoreDbContext>(
+                options => options.UseSqlServer(
+                    Configuration.GetConnectionString("PizzaStore7947")
+                    )
+                );
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

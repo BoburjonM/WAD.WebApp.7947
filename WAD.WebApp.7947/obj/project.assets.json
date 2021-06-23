@@ -4333,6 +4333,22 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XPath.XDocument.dll": {}
         }
+      },
+      "WAD.WebApp.7947.DAL/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.1",
+        "dependencies": {
+          "Microsoft.AspNetCore.Http.Features": "2.1.1",
+          "Microsoft.EntityFrameworkCore": "2.1.1",
+          "Microsoft.EntityFrameworkCore.Relational": "2.1.1",
+          "Microsoft.EntityFrameworkCore.SqlServer": "2.1.1"
+        },
+        "compile": {
+          "bin/placeholder/WAD.WebApp.7947.DAL.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/WAD.WebApp.7947.DAL.dll": {}
+        }
       }
     }
   },
@@ -11870,6 +11886,11 @@
         "system.xml.xpath.xdocument.4.3.0.nupkg.sha512",
         "system.xml.xpath.xdocument.nuspec"
       ]
+    },
+    "WAD.WebApp.7947.DAL/1.0.0": {
+      "type": "project",
+      "path": "../WAD.WebApp.7947.DAL/WAD.WebApp.7947.DAL.csproj",
+      "msbuildProject": "../WAD.WebApp.7947.DAL/WAD.WebApp.7947.DAL.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -11878,7 +11899,8 @@
       "Microsoft.AspNetCore.Http.Features >= 2.1.1",
       "Microsoft.AspNetCore.Razor.Design >= 2.1.2",
       "Microsoft.CodeAnalysis.Common >= 2.8.0",
-      "Microsoft.NETCore.App >= 2.1.0"
+      "Microsoft.NETCore.App >= 2.1.0",
+      "WAD.WebApp.7947.DAL >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -11907,7 +11929,11 @@
       "frameworks": {
         "netcoreapp2.1": {
           "targetAlias": "netcoreapp2.1",
-          "projectReferences": {}
+          "projectReferences": {
+            "d:\\9sem\\wad\\WAD.WebApp.7947\\WAD.WebApp.7947.DAL\\WAD.WebApp.7947.DAL.csproj": {
+              "projectPath": "d:\\9sem\\wad\\WAD.WebApp.7947\\WAD.WebApp.7947.DAL\\WAD.WebApp.7947.DAL.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

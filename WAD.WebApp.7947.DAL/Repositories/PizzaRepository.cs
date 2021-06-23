@@ -6,7 +6,7 @@ using WAD.WebApp._7947.DAL.DTO;
 
 namespace WAD.WebApp._7947.DAL.Repositories
 {
-    class PizzaRepository : IBaseRepository<Pizza>
+    public class PizzaRepository : IBaseRepository<Pizza>
     {
         protected readonly PizzaStoreDbContext _dbContext;
 
