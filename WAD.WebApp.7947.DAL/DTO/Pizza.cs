@@ -30,10 +30,10 @@ namespace WAD.WebApp._7947.DAL.DTO
         [Display(Name = "Pizza Photo")]
         public byte[] PizzaBinPhoto { get; set; }
 
-        [Display(Name = "Photo")]
+        [Display(Name = "Upload Photo")]
         [DataType(DataType.Upload)]
         [NotMapped]
-        public IFormFile SteakPhoto { get; set; }
+        public IFormFile PizzaPhoto { get; set; }
     }
     public enum PizzaSize
     {
