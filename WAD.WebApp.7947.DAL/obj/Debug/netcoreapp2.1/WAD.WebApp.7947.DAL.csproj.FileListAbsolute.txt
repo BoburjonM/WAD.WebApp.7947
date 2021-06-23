@@ -1,0 +1,12 @@
+D:\9sem\wad\WAD.WebApp.7947\WAD.WebApp.7947.DAL\bin\Debug\netcoreapp2.1\WAD.WebApp.7947.DAL.deps.json
+D:\9sem\wad\WAD.WebApp.7947\WAD.WebApp.7947.DAL\bin\Debug\netcoreapp2.1\WAD.WebApp.7947.DAL.runtimeconfig.json
+D:\9sem\wad\WAD.WebApp.7947\WAD.WebApp.7947.DAL\bin\Debug\netcoreapp2.1\WAD.WebApp.7947.DAL.runtimeconfig.dev.json
+D:\9sem\wad\WAD.WebApp.7947\WAD.WebApp.7947.DAL\bin\Debug\netcoreapp2.1\WAD.WebApp.7947.DAL.dll
+D:\9sem\wad\WAD.WebApp.7947\WAD.WebApp.7947.DAL\bin\Debug\netcoreapp2.1\WAD.WebApp.7947.DAL.pdb
+D:\9sem\wad\WAD.WebApp.7947\WAD.WebApp.7947.DAL\obj\Debug\netcoreapp2.1\WAD.WebApp.7947.DAL.csprojAssemblyReference.cache
+D:\9sem\wad\WAD.WebApp.7947\WAD.WebApp.7947.DAL\obj\Debug\netcoreapp2.1\WAD.WebApp.7947.DAL.AssemblyInfoInputs.cache
+D:\9sem\wad\WAD.WebApp.7947\WAD.WebApp.7947.DAL\obj\Debug\netcoreapp2.1\WAD.WebApp.7947.DAL.AssemblyInfo.cs
+D:\9sem\wad\WAD.WebApp.7947\WAD.WebApp.7947.DAL\obj\Debug\netcoreapp2.1\WAD.WebApp.7947.DAL.csproj.CoreCompileInputs.cache
+D:\9sem\wad\WAD.WebApp.7947\WAD.WebApp.7947.DAL\obj\Debug\netcoreapp2.1\WAD.WebApp.7947.DAL.dll
+D:\9sem\wad\WAD.WebApp.7947\WAD.WebApp.7947.DAL\obj\Debug\netcoreapp2.1\WAD.WebApp.7947.DAL.pdb
+D:\9sem\wad\WAD.WebApp.7947\WAD.WebApp.7947.DAL\obj\Debug\netcoreapp2.1\WAD.WebApp.7947.DAL.genruntimeconfig.cache
